@@ -8,7 +8,7 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-    fmt.Fprint(w, "Welcome!\n")
+    fmt.Fprint(w, "Welcomes!\n")
 }
 
 func Hello(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
