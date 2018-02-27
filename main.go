@@ -23,3 +23,7 @@ func main() {
 
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
+
+func Sum(a int, b int) int {
+	return a + b
+}
