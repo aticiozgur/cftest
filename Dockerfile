@@ -1,5 +1,6 @@
 FROM golang:alpine AS build-env
-RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' .
+ADD . /src
+RUN cd /src && CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' .
 
 FROM alpine:3.5
 LABEL Ozgur Atici
