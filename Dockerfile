@@ -5,7 +5,7 @@ RUN cd /go/src/github.com/aticiozgur/cftest && CGO_ENABLED=0 GOOS=linux go build
 FROM alpine:3.5
 LABEL Ozgur Atici
 
-COPY ./cftest /app/cftest
+COPY ./go/src/github.com/aticiozgur/cftest /app/cftest
 RUN chmod +x /app/cftest
 
 ENV PORT 8080
