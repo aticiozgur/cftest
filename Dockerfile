@@ -4,10 +4,10 @@ RUN cd /go/src/github.com/aticiozgur/cftest && CGO_ENABLED=0 GOOS=linux go build
 
 FROM alpine:3.5
 LABEL Ozgur Atici
-
-RUN ln -s /go/src/github.com/aticiozgur/cftest /app
+WORKDIR /app
+COPY --from=build-env go/src/github.com/aticiozgur/cftest/cftest /app/
 
 ENV PORT 8080
 EXPOSE 8080
 
-ENTRYPOINT ["/app"]
+ENTRYPOINT ./cftest
