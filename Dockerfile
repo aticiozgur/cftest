@@ -6,7 +6,6 @@ FROM alpine:3.5
 LABEL Ozgur Atici
 
 RUN ln -s /go/src/github.com/aticiozgur/cftest /app
-RUN chmod +x /app
 
 ENV PORT 8080
 EXPOSE 8080
