@@ -5,10 +5,10 @@ RUN cd /go/src/github.com/aticiozgur/cftest && CGO_ENABLED=0 GOOS=linux go build
 FROM alpine:3.5
 LABEL Ozgur Atici
 
-COPY /go/src/github.com/aticiozgur/cftest /app/cftest
-RUN chmod +x /app/cftest
+RUN ln -s /go/src/github.com/aticiozgur/cftest /app
+RUN chmod +x /app
 
 ENV PORT 8080
 EXPOSE 8080
 
-ENTRYPOINT ["/app/cftest"]
+ENTRYPOINT ["/app"]
